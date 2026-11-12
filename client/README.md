@@ -8,7 +8,7 @@ A personal portfolio website presenting Julia Cameron's background, skills, proj
 - **About**: biography, resume, and interactive skill-category badges
 - **Projects**: project cards loaded from the backend
 - **Education**: qualifications loaded from the backend
-- **Services**: software development services
+- **Services**: software development services loaded from the backend
 - **Contact**: contact form and direct contact information
 - **Sign In**: sign in with an existing account and sign out
 - **Sign Up**: create a regular user account, then sign in
@@ -57,6 +57,10 @@ For older records without these fields, study periods such as `2001 - 2006` or
 `January 2026 - present` are recognized; a year-only end is sorted as January 1 of
 that year. Other free-text periods are not interpreted. The ordering is applied on
 the Education page and does not change existing database records.
+
+The Services page reads from MongoDB. Signed-in admins can add, edit, and delete services;
+while no services exist, an admin can import the four original cards with one click.
+Retrying the import skips records previously imported by this tool.
 
 The Contact form saves submissions to MongoDB, then sends them through EmailJS.
 If email delivery fails after saving, the visitor is told not to resubmit. If the

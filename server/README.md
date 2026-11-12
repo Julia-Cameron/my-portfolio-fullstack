@@ -64,6 +64,7 @@ All endpoints are prefixed with `/api`. Resource endpoints support the methods l
 | Contacts | `GET, POST /contacts`, `GET, PUT, DELETE /contacts/:id`, `DELETE /contacts` | POST public; reads and other changes admin only |
 | Projects | `GET, POST /projects`, `GET, PUT, DELETE /projects/:id`, `DELETE /projects` | GET public; changes admin only |
 | Qualifications | `GET, POST /qualifications`, `GET, PUT, DELETE /qualifications/:id`, `DELETE /qualifications` | GET public; changes admin only |
+| Services | `GET, POST /services`, `GET, PUT, DELETE /services/:id`, `DELETE /services` | GET public; changes admin only |
 | Users | `GET, POST /users`, `GET, PUT, DELETE /users/:id`, `DELETE /users` | Admin only |
 
 Requests that create or update resources should send JSON bodies. Protected routes require an `Authorization` header using the `Bearer` scheme and a token issued by the sign-in endpoint.

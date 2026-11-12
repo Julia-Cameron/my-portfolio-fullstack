@@ -3,10 +3,11 @@ import mongoose from "mongoose";
 import Contact from "./models/contacts.js";
 import Project from "./models/projects.js";
 import Qualification from "./models/qualifications.js";
+import Service from "./models/services.js";
 import User from "./models/users.js";
 
 await mongoose.connect(process.env.MONGODB_URI);
-for (const m of [Contact, Project, Qualification, User]) {
+for (const m of [Contact, Project, Qualification, Service, User]) {
     await m.createCollection();
     console.log("Created collection:", m.collection.name);
 }

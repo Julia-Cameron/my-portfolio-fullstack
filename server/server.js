@@ -15,6 +15,7 @@ import mongoose from "mongoose";
 import contactsRouter from "./routes/api/contacts.js";
 import projectsRouter from "./routes/api/projects.js";
 import qualificationsRouter from "./routes/api/qualifications.js";
+import servicesRouter from "./routes/api/services.js";
 import usersRouter from "./routes/api/users.js";
 
 //const assetsRouter = require("./server/assets-router");
@@ -22,6 +23,7 @@ app.use("/src", router);
 app.use("/api/contacts", contactsRouter);
 app.use("/api/projects", projectsRouter);
 app.use("/api/qualifications", qualificationsRouter);
+app.use("/api/services", servicesRouter);
 app.use("/api/users", usersRouter);
 app.use("/api/auth", authRouter);
 app.use("/", function (req, res) {

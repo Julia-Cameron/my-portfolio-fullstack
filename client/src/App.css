@@ -96,6 +96,11 @@ body {
   color: #bae6fd;
 }
 
+.nav-link.active {
+  color: var(--primary-starlight);
+  border-bottom: 2px solid var(--primary-starlight);
+}
+
 a {
   color: var(--primary-starlight);
 }
@@ -180,8 +185,7 @@ button:focus-visible {
   color: var(--text-muted);
   margin: 80px 0 40px 0;
   line-height: 1.6;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: center;
 }
 
 .hero-buttons {
@@ -265,8 +269,7 @@ button:focus-visible {
   color: var(--text-muted);
   line-height: 1.8;
   margin-bottom: 40px;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
 }
 
 .skills-section h2 {
@@ -417,8 +420,7 @@ button:focus-visible {
   color: var(--text-muted);
   line-height: 1.8;
   margin-bottom: 40px;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
 }
 
 /*Contact Page Styles*/
@@ -440,8 +442,7 @@ button:focus-visible {
   color: var(--text-muted);
   margin: 0 0 24px;
   line-height: 1.6;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
 }
 
 .direct-channels {
@@ -706,13 +707,12 @@ button:focus-visible {
   font-size: 1.1rem;
   color: var(--text-muted);
   margin-bottom: 30px;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
 }
 
 .service-description {
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
+  white-space: pre-line;
 }
 
 /* Paired cards share title and description rows on wider screens. */
@@ -753,6 +753,16 @@ button:focus-visible {
   box-shadow: 0 10px 25px rgba(2, 132, 199, 0.1);
 }
 
+.service-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-body .education-actions {
+  align-self: stretch;
+  margin-top: auto;
+}
+
 .service-title {
   font-size: 1.3rem;
   line-height: 1.2;
@@ -780,8 +790,7 @@ button:focus-visible {
   font-size: 1.1rem;
   color: var(--text-muted);
   margin-bottom: 30px;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
 }
 
 .projects-grid {
@@ -868,13 +877,11 @@ button:focus-visible {
 .project-description {
   min-height: 5.5em;
   margin-bottom: 8px;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
 }
 
 .project-behind-the-scenes {
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
 }
 
 .project-role,
@@ -1013,8 +1020,7 @@ button:focus-visible {
 }
 
 .education-description {
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
 }
 
 .education-year {

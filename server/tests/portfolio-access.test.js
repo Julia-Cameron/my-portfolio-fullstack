@@ -5,8 +5,10 @@ import jwt from 'jsonwebtoken';
 import User from '../models/users.js';
 import Project from '../models/projects.js';
 import Qualification from '../models/qualifications.js';
+import Service from '../models/services.js';
 import projectsRouter from '../routes/api/projects.js';
 import qualificationsRouter from '../routes/api/qualifications.js';
+import servicesRouter from '../routes/api/services.js';
 
 test('portfolio resources are publicly readable and writable only by admins', async (t) => {
     const secret = process.env.JWT_SECRET;
@@ -17,7 +19,7 @@ test('portfolio resources are publicly readable and writable only by admins', as
     const originalUserFind = User.findById;
     User.findById = () => ({ select: async () => account });
 
-    const models = [Project, Qualification];
+    const models = [Project, Qualification, Service];
     for (const model of models) {
         const originals = {
             find: model.find,
@@ -49,6 +51,7 @@ test('portfolio resources are publicly readable and writable only by admins', as
     app.use(express.json());
     app.use('/projects', projectsRouter);
     app.use('/qualifications', qualificationsRouter);
+    app.use('/services', servicesRouter);
     const server = await new Promise((resolve) => {
         const listener = app.listen(0, '127.0.0.1', () => resolve(listener));
     });
@@ -60,7 +63,7 @@ test('portfolio resources are publicly readable and writable only by admins', as
     });
 
     const base = `http://127.0.0.1:${server.address().port}`;
-    for (const resource of ['projects', 'qualifications']) {
+    for (const resource of ['projects', 'qualifications', 'services']) {
         const url = `${base}/${resource}`;
         for (const path of ['', `/${id}`]) {
             assert.equal((await fetch(url + path)).status, 200);

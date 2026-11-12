@@ -1,5 +1,3 @@
-import React from 'react';
-
 function Footer() {
 
     // Read the year at runtime so the copyright stays current.

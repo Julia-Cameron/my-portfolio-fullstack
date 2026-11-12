@@ -2,7 +2,7 @@
 
 import './App.css';
 import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
 import StarryBackground from './pages/StarryBackground';
 
 // Import all page components and necessary libraries for routing
@@ -38,14 +38,14 @@ function App() {
             </div>
 
             <div className="nav-links">
-              <Link to="/" className="nav-link">Home</Link>
-              <Link to="/about" className="nav-link">About</Link>
-              <Link to="/contact" className="nav-link">Contact</Link>
-              <Link to="/services" className="nav-link">Services</Link>
-              <Link to="/projects" className="nav-link">Projects</Link>
-              <Link to="/education" className="nav-link">Education</Link>
-              <Link to="/signin" className="nav-link">{session ? 'Account' : 'Sign In'}</Link>
-              {!session && <Link to="/signup" className="nav-link">Sign Up</Link>}
+              <NavLink to="/" end className="nav-link">Home</NavLink>
+              <NavLink to="/about" className="nav-link">About</NavLink>
+              <NavLink to="/contact" className="nav-link">Contact</NavLink>
+              <NavLink to="/services" className="nav-link">Services</NavLink>
+              <NavLink to="/projects" className="nav-link">Projects</NavLink>
+              <NavLink to="/education" className="nav-link">Education</NavLink>
+              <NavLink to="/signin" className="nav-link">{session ? 'Account' : 'Sign In'}</NavLink>
+              {!session && <NavLink to="/signup" className="nav-link">Sign Up</NavLink>}
             </div>
           </nav>
 
@@ -55,7 +55,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact session={session} />} />
-              <Route path="/services" element={<Services />} />
+              <Route path="/services" element={<Services session={session} />} />
               <Route path="/projects" element={<Projects session={session} />} />
               <Route path="/education" element={<Education session={session} />} />
               <Route path="/signin" element={<SignIn session={session} setSession={setSession} />} />
